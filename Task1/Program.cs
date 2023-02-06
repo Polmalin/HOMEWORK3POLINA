@@ -3,30 +3,12 @@
 //12821 -> да
 //23432 -> да
 
-// int GetNumber(string message)
-// {
-// int result = 0;
-// while(true)
-// {
-// Console.WriteLine(message);
-// if(int.TryParse(Console.ReadLine(), out result) && result <= 10000 && result <100000)
-// {
-// break;
-// }
-// else
-// {
-// Console.WriteLine("Ввели не пятизначное число");
-// }
-// }
-// return result;
-// }
 
 
 Console.WriteLine("Введите пятизначное число:");
 string input = Console.ReadLine();
-if (input.Length == 5)
+if (input.Length == 5 && validateNumber(input))
 {
-    validateNumber(input);
     isPalindrom (input);
 }
 else
@@ -34,9 +16,10 @@ else
     Console.WriteLine("Ввели не пятизначное число");
 }
 
-void validateNumber(string input)
+bool validateNumber(string input)
 {
-    Convert.ToInt32(input);
+    int result;
+    return int.TryParse(input, out result);
 }
 
 

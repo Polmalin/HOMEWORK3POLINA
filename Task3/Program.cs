@@ -2,10 +2,11 @@
 //3 -> 1, 8, 27
 //5 -> 1, 8, 27, 64, 125
 int x1 = GetNumber("Введите число");
-for (int i = 1; i <= Math.Abs(x1); i++)
+for (int i = 1; i <= x1; i++)
 {
     System.Console.Write($"{Math.Pow(i,3)} ");
 }
+
 int GetNumber(string message)
 {
     int result = 0;
